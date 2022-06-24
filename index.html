@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Гонщик</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div class="screen screen-login">
+        <div>
+            <h2>Начало игры</h2>
+            <br>
+            <div class="selection-cars">
+                <img src="assets/images/car.png" class="selection-car" onclick="selectCar(0)">
+                <img src="assets/images/car2.png" class="selection-car" onclick="selectCar(1)">
+                <img src="assets/images/car3.png" class="selection-car" onclick="selectCar(2)">
+            </div>
+            <button class="w-100 start" onclick="start();" disabled>Играть</button>
+        </div>
+    </div>
+
+    <div class="screen screen-results hidden">
+        <div>
+            <h2>Игра завершена</h2>
+            <div>
+                <br>
+                <p>
+                    Вы продержались <span>02:50</span>, из них <span>00:14</span> в режиме ярости
+                </p>
+                <p>
+                    Прошлый игрок продержался <span>01:15</span>
+                </p>
+
+                <div class="alert alert-success">
+                    Вы выиграли!
+                </div>
+
+                <div class="alert alert-danger">
+                    Вы проиграли!
+                </div>
+
+                <button class="w-100 stop">Играть сначала</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen-game">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    </div>
+
+    <p id="tablo" style="z-index: 9999;position: absolute;top: 30px;left: 30px; font-size: 50px; font-weight: bold;"></p>
+
+    <script src="cars.json"></script>
+   <script src="assets/js/script.js"></script>
+</body>
+
+</html>
