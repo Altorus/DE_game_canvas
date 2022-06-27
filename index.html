@@ -49,12 +49,25 @@
     </div>
 
     <div class="screen-game">
+            <header>
+                <div class="flex flex-jc-sb">
+                    <div class="text-center">
+                        Используется машина: <span id="nameCar">Car 1</span>
+                    </div>
+                    <div class="text-center">
+                        Прошло времени: <span id="timer">00:00</span>
+                    </div>
+                    <div class="text-center">
+                        Жизни: <span id="tablo"></span>
+                    </div>
+                </div>
+            </header>
+            <div class="game-zone">
+                <img src="assets/images/car2.png" class="car" style="left: 0%; bottom: 33%"></div>
+            <div id="blocks"></div>
         <canvas id="gameCanvas"></canvas>
     </div>
     </div>
-
-    <p id="tablo" style="z-index: 9999;position: absolute;top: 30px;left: 30px; font-size: 50px; font-weight: bold;"></p>
-
     <script src="cars.json"></script>
    <script src="assets/js/script.js"></script>
 </body>

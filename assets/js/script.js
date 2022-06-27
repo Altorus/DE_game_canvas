@@ -21,9 +21,14 @@ function selectCar(el) {
     objCar.name = data[el].name;
     objCar.src = data[el].img;
     document.querySelector('.w-100.start').disabled = false;
+    document.querySelector('#nameCar').innerHTML = objCar.name
 }
 
 window.onload = init;
+
+var timer = document.querySelector('#timer')
+var sec = 1;
+var min = 0;
 
 var gameCanvas = document.querySelector("#gameCanvas");
 var ctxcanvas = gameCanvas.getContext("2d");
@@ -55,6 +60,7 @@ function start()
 {
     document.querySelector(".screen-login").style.display = "none";
     setInterval(go, 1);
+    setInterval(timerPlay, 1000)
 }
 
 function go()
@@ -64,6 +70,7 @@ function go()
         drawBg();
         drawCar();
         drawKust();
+        
     }
 
 }
@@ -75,6 +82,7 @@ function init()
 
     drawBg();
     drawCar();
+    drawKust();
 
     document.addEventListener("keydown", keyDown, false);
     document.addEventListener("keyup", keyUp, false);
@@ -83,7 +91,7 @@ function init()
 
 function drawBg()
 {
-    // ctxcanvas.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    ctxcanvas.clearRect(0, 0, window.innerWidth, window.innerHeight);
     ctxcanvas.drawImage(imgDoroga, speedDoroga, 0, window.innerWidth, window.innerHeight);
     ctxcanvas.drawImage(imgDoroga, speedDoroga + window.innerWidth, 0, window.innerWidth, window.innerHeight);
 
@@ -221,4 +229,28 @@ function bam(CarX, CarY, KustX, KustY)
 
 reloadGame.onclick = () => {
     location.reload();
+}
+
+function timerPlay() {
+    if(isPause){
+        if (sec > 59) {
+            sec = 0;
+            min++;
+        }
+        if (min < 10) {
+            if (sec < 10) {
+                timer.innerHTML = "0" + min + ":" + "0" + sec;
+            } else {
+                timer.innerHTML = "0" + min + ":" + sec;
+            }
+        } else {
+            if (sec < 10) {
+                timer.innerHTML = min + ":" + "0" + sec;
+            } else {
+                timer.innerHTML = min + ":" + sec;
+            }
+    
+        }
+        sec++;
+    }
 }
