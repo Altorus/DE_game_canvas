@@ -83,7 +83,7 @@ function init()
 
 function drawBg()
 {
-    ctxcanvas.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    // ctxcanvas.clearRect(0, 0, window.innerWidth, window.innerHeight);
     ctxcanvas.drawImage(imgDoroga, speedDoroga, 0, window.innerWidth, window.innerHeight);
     ctxcanvas.drawImage(imgDoroga, speedDoroga + window.innerWidth, 0, window.innerWidth, window.innerHeight);
 
